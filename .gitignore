@@ -2,6 +2,11 @@
 Assignment_2/ex_1/*
 !Assignment_2/ex_1/exercise_1.cu
 Assignment_2/ex_2/*
+Assignment_2/ex_2/exercise_2_timer
+Assignment_2/ex_2/result.txt
+Assignment_2/ex_2/timeFunctions.sh
+Assignment_2/ex_2/exercise_2_timer.cu
+
 !Assignment_2/ex_2/exercise_2.cu
 Assignment_2/ex_3/*
 !Assignment_2/ex_3/exercise_3.cu
