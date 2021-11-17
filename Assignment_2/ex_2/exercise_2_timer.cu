@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
     cudaMemcpy(y, d_y, ARRAY_SIZE*sizeof(float), cudaMemcpyDeviceToHost);
     double gpuElaps = cpuSecond() - gpuStart;
     
-    printf("%f \t %f\n",cpuElaps,gpuElaps);
+    printf("%f\t%f\t%i\n",cpuElaps,gpuElaps,ARRAY_SIZE);
     cudaFree(d_x);
     cudaFree(d_y);
     free(x);
