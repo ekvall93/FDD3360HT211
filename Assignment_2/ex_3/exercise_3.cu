@@ -65,7 +65,7 @@ int main(int argc, char** argv) {
     }
     int NUM_PARTICLES = atoi(argv[1]);
     int NUM_ITER = atoi(argv[2]);
-    int BLOCK_SIZE = atoi(argv[3]);
+    int TPB = atoi(argv[3]);
 
 
     cudaProfilerStart();
@@ -92,10 +92,10 @@ int main(int argc, char** argv) {
     cudaMalloc(&d_ParticlesGPU, NUM_PARTICLES*sizeof(Particle));
     cudaMemcpy(d_ParticlesGPU, ParticlesGPU, NUM_PARTICLES*sizeof(Particle), cudaMemcpyHostToDevice);
 
-    int GRID_SIZE = (NUMexercise_3.cu_PARTICLES + BLOCK_SIZE - 1) / BLOCK_SIZE; 
+    int GRID_SIZE = (NUM_PARTICLES + TPB - 1) / TPB; 
 
     for (int i =0; i<NUM_ITER; i++) {
-        updateParticlesGPU<<<GRID_SIZE, BLOCK_SIZE>>>(d_ParticlesGPU, NUM_PARTICLES, 1, 0.02);
+        updateParticlesGPU<<<GRID_SIZE, TPB>>>(d_ParticlesGPU, NUM_PARTICLES, 1, 0.02);
     }
 
     cudaMemcpy(ParticlesGPU, d_ParticlesGPU, NUM_PARTICLES*sizeof(Particle), cudaMemcpyDeviceToHost);
@@ -138,7 +138,7 @@ int main(int argc, char** argv) {
         printf("Failed!!\n");
     }
 
-    printf("%f\t%f\t%i\t%i\t%i\n", cpuElapsed, gpuElapsed, NUM_PARTICLES, NUM_ITER, BLOCK_SIZE);
+    printf("%f\t%f\t%i\t%i\t%i\n", cpuElapsed, gpuElapsed, NUM_PARTICLES, NUM_ITER, TPB);
     
 
 
