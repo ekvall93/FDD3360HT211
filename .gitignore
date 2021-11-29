@@ -20,7 +20,8 @@ Assignment_3/ex_2/*
 !Assignment_3/ex_2/exercise_2b.cu
 Assignment_3/ex_3/*
 !Assignment_3/ex_3/exercise_3.cu
-Assignment_3/ex_bonus/bonus.cu
+Assignment_3/ex_bonus/*
+!Assignment_3/ex_bonus/bonus.cu
 
 .vscode
 *.ipynb
