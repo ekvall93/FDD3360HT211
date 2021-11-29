@@ -12,7 +12,15 @@ Assignment_2/ex_3/*
 !Assignment_2/ex_3/exercise_3.cu
 Assignment_2/ex_4/*
 !Assignment_2/ex_4/exercise_4.cu
-
+Assignment_3/ex_1/*
+!Assignment_3/ex_1/images
+!Assignment_3/ex_1/hw3_ex1.cu
+Assignment_3/ex_2/*
+!Assignment_3/ex_2/exercise_2a.cu
+!Assignment_3/ex_2/exercise_2b.cu
+Assignment_3/ex_3/*
+!Assignment_3/ex_3/exercise_3.cu
+Assignment_3/ex_bonus/bonus.cu
 
 .vscode
 *.ipynb
